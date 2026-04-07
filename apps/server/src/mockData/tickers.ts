@@ -1,4 +1,4 @@
-import { Ticker } from "../types/market";
+import { Ticker } from "../types/market.js";
 
 export const tickers: Ticker[] = [
   {
