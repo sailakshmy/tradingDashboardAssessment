@@ -71,93 +71,11 @@
   background: #ffb347;
 }
 
-.ticker-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
-}
-
-.ticker-card {
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 22px;
-  padding: 18px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.04),
-      rgba(255, 255, 255, 0.02)
-    ),
-    rgba(8, 17, 31, 0.88);
-  color: inherit;
-  text-align: left;
-  cursor: pointer;
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.ticker-card:hover,
-.ticker-card.active {
-  transform: translateY(-2px);
-  border-color: rgba(255, 179, 71, 0.8);
-  box-shadow: 0 16px 34px rgba(255, 138, 0, 0.14);
-}
-
-.ticker-card__head {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  align-items: baseline;
-}
-
-.ticker-card__head span,
-.ticker-card h3 {
-  display: block;
-  margin-top: 4px;
-  color: rgba(246, 247, 251, 0.66);
-}
-
-.ticker-card h3 {
-  min-height: 42px;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.ticker-card__price {
-  margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.4rem;
-}
-
-.positive {
-  color: #75e4b8;
-}
-
-.negative {
-  color: #ff8d8d;
-}
-
 .content-grid {
   display: grid;
   grid-template-columns: 1.6fr 0.9fr;
   gap: 18px;
   margin-top: 18px;
-}
-
-.chart-panel__meta {
-  text-align: right;
-}
-
-.chart-panel__meta strong {
-  display: block;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 2rem;
-}
-
-.chart-shell {
-  width: 100%;
-  height: 320px;
 }
 
 .alert-panel__form {
