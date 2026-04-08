@@ -4,23 +4,32 @@ import { createMarketRouter } from "../routes/marketRoutes.js";
 import { HistoryService } from "../services/historyService.js";
 import { MarketSimulator } from "../services/marketSimulator.js";
 
+type RouterLayer = {
+  route?: {
+    path?: string;
+    methods?: Record<string, boolean>;
+    stack?: Array<{
+      handle: (request: Request, response: Response) => void;
+    }>;
+  };
+};
+
 const findRouteHandler = (path: string) => {
   const router = createMarketRouter(
     new MarketSimulator(1000),
     new HistoryService(),
   );
-  const layer = router.stack.find(
-    (entry) => entry.route?.path === path && entry.route.methods.get,
-  );
+  const layer = (router.stack as RouterLayer[]).find((entry) => {
+    return entry.route?.path === path && entry.route?.methods?.get === true;
+  });
 
-  if (!layer) {
+  const handler = layer?.route?.stack?.[0]?.handle;
+
+  if (!handler) {
     throw new Error(`Route ${path} not found`);
   }
 
-  return layer.route.stack[0].handle as (
-    request: Request,
-    response: Response,
-  ) => void;
+  return handler;
 };
 
 const createResponse = () => {

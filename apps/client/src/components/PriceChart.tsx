@@ -16,11 +16,16 @@ interface PriceChartProps {
   history: PricePoint[];
 }
 
-const formatLabel = (timestamp: string) =>
-  new Date(timestamp).toLocaleTimeString([], {
+const formatLabel = (value: unknown) => {
+  if (typeof value !== "string") {
+    return "";
+  }
+
+  return new Date(value).toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
   });
+};
 
 export const PriceChart = ({
   ticker,
