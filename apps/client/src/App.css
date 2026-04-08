@@ -25,7 +25,6 @@
   max-width: 12ch;
 }
 
-.hero__copy,
 .alert-panel p {
   color: rgba(246, 247, 251, 0.74);
   line-height: 1.6;
@@ -57,8 +56,7 @@
   margin-bottom: 18px;
 }
 
-.status-pill,
-.alert-badge {
+.status-pill {
   padding: 10px 14px;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -66,31 +64,11 @@
   color: #7de2c5;
 }
 
-.alert-badge.live {
-  color: #18120b;
-  background: #ffb347;
-}
-
 .content-grid {
   display: grid;
   grid-template-columns: 1.6fr 0.9fr;
   gap: 18px;
   margin-top: 18px;
-}
-
-.alert-panel__form {
-  display: grid;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.alert-panel input {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #f6f7fb;
 }
 
 .error-banner {
