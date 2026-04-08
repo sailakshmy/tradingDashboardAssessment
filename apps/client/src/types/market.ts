@@ -16,3 +16,17 @@ export interface PriceUpdate extends PricePoint {
   change: number;
   changePercent: number;
 }
+
+export interface TickersResponse {
+  data: Ticker[];
+  livePrices: PriceUpdate[];
+}
+
+export interface HistoryResponse {
+  data: PricePoint[];
+  meta: {
+    symbol: string;
+    points: number;
+    cached: boolean;
+  };
+}
